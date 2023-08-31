@@ -39,8 +39,8 @@ BoundingBox Renderer::CalcBoundingBox(glm::vec4* triangleVertices)
 	BoundingBox bbox;
 	glm::vec2 min { 0, 0 };
 	glm::vec2 max { viewport.width - 1, viewport.height - 1 };
-	bbox.min = min;
-	bbox.max = max;
+	bbox.min = max;
+	bbox.max = min;
 	
 	for (size_t i = 0; i < 3; i++)
 	{
