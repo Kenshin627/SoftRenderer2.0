@@ -162,6 +162,7 @@
   <ItemGroup>
     <ClInclude Include="src\renderer\BoundingBox.h" />
     <ClInclude Include="src\renderer\Renderer.h" />
+    <ClInclude Include="src\renderer\Vertex.h" />
     <ClInclude Include="src\renderer\Viewport.h" />
     <ClInclude Include="src\window\Window.h" />
   </ItemGroup>

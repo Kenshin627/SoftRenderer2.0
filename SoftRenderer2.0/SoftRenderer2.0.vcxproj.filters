@@ -38,5 +38,8 @@
     <ClInclude Include="src\renderer\Viewport.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\renderer\Vertex.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

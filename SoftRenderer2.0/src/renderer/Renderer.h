@@ -1,6 +1,7 @@
 #pragma once
 #include "Viewport.h"
 #include "BoundingBox.h"
+#include "Vertex.h"
 #include <array>
 
 class Window;
@@ -18,10 +19,10 @@ public:
 private:
 	Viewport viewport{};
 	Window* winHandle = nullptr;
-	std::array<glm::vec4, 3> triangleVertices = { 
-		glm::vec4( -0.5f, -0.5f, 0.0f, 1.0f),
-		glm::vec4(  0.5f, -0.5f, 0.0f, 1.0f),
-		glm::vec4(  0.0f,  0.5f, 0.0f, 1.0f)
+	std::array<Vertex, 3> triangleVertices = { 
+		Vertex(glm::vec4(-0.5f, -0.5f, 0.0f, 1.0f), glm::vec3(0.0f, 255.0f, 0.0f)),
+		Vertex(glm::vec4(  0.5f, -0.5f, 0.0f, 1.0f), glm::vec3(255.0f, 0.0f, 0.0f)),
+		Vertex(glm::vec4(  0.0f,  0.5f, 0.0f, 1.0f), glm::vec3(0.0f, 0.0f, 255.0f))
 	};
 	glm::vec3 drawColor { 230, 80, 50 };
 };

@@ -16,7 +16,7 @@ void Renderer::Rasterize()
 	std::array<glm::vec4, 4> screenSpaceVertices;
 	for (size_t i = 0; i < 3; i++)
 	{
-		screenSpaceVertices[i] = viewport.transform * triangleVertices[i];
+		screenSpaceVertices[i] = viewport.transform * triangleVertices[i].Position;
 	}
 	BoundingBox bbox = CalcBoundingBox(screenSpaceVertices.data());
 	for (size_t y = bbox.min.y; y <= bbox.max.y; y++)
@@ -29,6 +29,12 @@ void Renderer::Rasterize()
 			{
 				continue;
 			}
+			//重心坐标插值
+			glm::vec3 drawColor = { 
+				baryCentric.x * triangleVertices[0].Color + 
+				baryCentric.y * triangleVertices[1].Color + 
+				baryCentric.z * triangleVertices[2].Color 
+			};
 			winHandle->DrawPoint(p.x, p.y, drawColor);
 		}
 	}
